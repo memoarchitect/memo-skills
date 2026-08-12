@@ -38,6 +38,20 @@ In Codex desktop, type `/` in the prompt, search for and select
 `memo-requirements`, then write the request. If it is not listed, confirm that
 the complete folder is installed at the location above and start a new task.
 
+EARS and SOPHIST are built into `memo-requirements`; do not repeat them in each
+request. The skill writes technical requirements in EARS form and uses SOPHIST
+to check their quality before returning them.
+
+After selecting the skill, write only the task and its inputs:
+
+```text
+Create system requirements from these user needs for a home-use infusion pump:
+
+- A patient must be able to start a prescribed infusion safely.
+- A patient must be warned if an infusion is interrupted.
+- The device must prevent delivery above the prescribed dose.
+```
+
 On platforms without a slash menu, invoke the installed skill by name where
 supported, or describe the task and attach the skill contents. For example:
 

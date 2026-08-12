@@ -5,7 +5,9 @@ description: Create, review, refine, or trace medical-device user needs and syst
 
 # Medical Device Requirements
 
-Create clear, testable requirements. Treat this skill as a writing and review aid, not a regulatory-compliance determination. Ask for the applicable markets, device classification, quality-system procedures, risk-management file, and controlled terminology when they affect the requested output.
+Create clear, testable requirements. Apply EARS as the requirement-sentence syntax and SOPHIST as the quality method by default; do not require the user to request either method. Treat this skill as a writing and review aid, not a regulatory-compliance determination. Ask for the applicable markets, device classification, quality-system procedures, risk-management file, and controlled terminology when they affect the requested output.
+
+Use EARS to state each technical requirement in a clear conditional or unconditional `shall` sentence. Use SOPHIST to test that wording for necessity, atomicity, lack of ambiguity, completeness, consistency, feasibility, traceability, and verifiability. A user need may remain a concise outcome statement when forcing it into a technical EARS sentence would lose the user intent; apply SOPHIST quality checks and define its validation criteria.
 
 ## Select the operating mode
 
@@ -53,7 +55,7 @@ A user need is normally validated with representative intended users and intende
 
 Use `shall` for mandatory requirements. Give every requirement one subject, one observable obligation, and one verification-ready result. Prefer active voice, controlled terminology, measurable values, and explicit conditions. Split compound statements unless all clauses are inseparable for one verification.
 
-Write the main sentence in EARS form. Choose the smallest fitting pattern from [EARS and SOPHIST patterns](references/ears-sophist-patterns.md), then apply the SOPHIST quality checks in that reference. Use a unique identifier and include the accompanying record fields below.
+Write the main sentence in EARS form. Choose the smallest fitting pattern from [EARS and SOPHIST patterns](references/ears-sophist-patterns.md), then apply its SOPHIST quality checks before presenting the result. Use a unique identifier and include the accompanying record fields below.
 
 ```markdown
 ID: SYS-###
