@@ -34,7 +34,7 @@ Before drafting, obtain or state assumptions for:
 
 When the user references a SysML v2 model that is available in the working context, inspect it and use it as evidence for terminology, element identity, hierarchy, allocation, interfaces, states, constraints, existing requirement relations, and traceability. A MEMO model is SysML v2 model context. Cite the relevant model element or qualified name in the source or trace link. Ask the user to attach, paste, or otherwise make the model accessible only when it cannot be reached from the supplied reference.
 
-Do not infer intended use, clinical claims, hazards, risk controls, acceptance limits, or regulatory obligations merely from model structure. Flag model/text conflicts, missing allocations, broken trace links, and undefined terms. In `create` mode, produce requirements proposed from the model plus the stated external inputs; in `review` mode, report findings only; in `refine` mode, provide the proposed requirement and model-link updates as a change set.
+Use the mapping and evidence rules in [SysML v2 traceability](references/sysml-v2-traceability.md). State the model-evidence level in every result. Do not infer intended use, clinical claims, hazards, risk controls, acceptance limits, regulatory obligations, or an unsupported relation mapping merely from model structure. Flag model/text conflicts, missing allocations, broken trace links, and undefined terms. In `create` mode, produce requirements proposed from the model plus the stated external inputs; in `review` mode, report findings only; in `refine` mode, provide the proposed requirement and model-link updates as a change set.
 
 Do not invent clinical claims, safety limits, risk acceptability, standards compliance, or regulatory classifications. Mark missing information as `TBD` and formulate a focused question.
 
@@ -74,7 +74,7 @@ For a user need, replace `Verification` with `Validation approach` and describe 
 
 ## Address safety and use conditions explicitly
 
-For each safety-related or risk-control-derived requirement, name the relevant operating state, trigger or foreseeable misuse where applicable, required response, safe state or user-facing information, and verification evidence. Do not assert that a requirement reduces risk sufficiently; connect it to the approved risk-management analysis and its acceptance rationale.
+For each safety-related or risk-control-derived requirement, name the relevant operating state, trigger or foreseeable misuse where applicable, required response, safe state or user-facing information, and verification evidence. Set `Risk-control status` to `proposed — pending risk-management approval` unless the user supplies an approved risk-control identifier and acceptance rationale. Do not assert that a requirement reduces risk sufficiently; connect it to the approved risk-management analysis and its acceptance rationale.
 
 For user-facing behavior, capture intended users, use environment, critical tasks, alarms or messages, and response time where relevant. Do not assume that a display, alert, or control is usable merely because it exists.
 
@@ -100,8 +100,10 @@ Unless the user specifies another format, return the parts applicable to the sel
 1. Assumptions and open questions.
 2. For `create` or `refine`, a requirements table with ID, level, EARS requirement, rationale, source, links, and verification or validation.
 3. For `review` or `refine`, a findings table; for `refine`, include the change log.
-4. A traceability summary showing user need → system → software/hardware allocation → verification or validation evidence, including model links when supplied.
+4. An auditable traceability summary using the row format in [SysML v2 traceability](references/sysml-v2-traceability.md): source/user need → system → software/hardware allocation → verification or validation evidence, including model links and evidence status when supplied.
 5. A concise review of gaps, conflicts, and compliance-sensitive items requiring quality or regulatory approval.
+
+Read [SysML v2 traceability](references/sysml-v2-traceability.md) for a compact end-to-end example when the request uses a model or needs traceability output.
 
 ## Portability
 
