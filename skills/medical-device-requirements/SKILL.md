@@ -1,11 +1,23 @@
 ---
 name: medical-device-requirements
-description: Draft, refine, review, or trace medical-device user needs and system, software, and hardware requirements. Use for device requirements specifications, design inputs, acceptance criteria, requirements reviews, and traceability work that should apply EARS syntax and SOPHIST quality rules while accounting for intended use, users, use environments, risk controls, verification, and validation.
+description: Create, review, refine, or trace medical-device user needs and system, software, and hardware requirements. Use for device requirements specifications, design inputs, acceptance criteria, requirements reviews, and traceability work that should apply EARS syntax and SOPHIST quality rules while accounting for intended use, users, use environments, risk controls, verification, and validation. Accept SysML v2 or MEMO models as input context for further refinement.
 ---
 
 # Medical Device Requirements
 
 Create clear, testable requirements. Treat this skill as a writing and review aid, not a regulatory-compliance determination. Ask for the applicable markets, device classification, quality-system procedures, risk-management file, and controlled terminology when they affect the requested output.
+
+## Select the operating mode
+
+Infer the mode from the request, or ask only if the distinction changes the requested artifact:
+
+| Mode | Purpose | Output and change rule |
+| --- | --- | --- |
+| `create` | Draft new requirements from supplied needs, risks, interfaces, use cases, or model context. | Produce a clearly labelled draft; do not imply approval. |
+| `review` | Assess supplied requirements or a baseline. | Produce findings and suggested wording only. Do not rewrite or modify the source artifact. |
+| `refine` | Improve supplied requirements after review. | First record the review findings, then provide a revised draft and a requirement-by-requirement change log. Preserve identifiers unless a change is explicitly approved. |
+
+For approved or baselined content, `refine` produces a proposed revision, never a silent replacement. Identify every meaning-changing edit and the approval decision it needs.
 
 ## Start with the requirement context
 
@@ -15,6 +27,12 @@ Before drafting, obtain or state assumptions for:
 - Product boundary and the requirement level: user need, system, software, or hardware.
 - Source, stakeholder, hazard or risk-control link, and any governing standards or company procedures.
 - Units, tolerances, operating conditions, interfaces, data, and the verification method or success criterion.
+
+### Use SysML v2 or MEMO model input
+
+When given a SysML v2 or MEMO model, use it as evidence for terminology, element identity, hierarchy, allocation, interfaces, states, constraints, existing requirement relations, and traceability. Cite the relevant model element or qualified name in the source or trace link.
+
+Do not infer intended use, clinical claims, hazards, risk controls, acceptance limits, or regulatory obligations merely from model structure. Flag model/text conflicts, missing allocations, broken trace links, and undefined terms. In `create` mode, produce requirements proposed from the model plus the stated external inputs; in `review` mode, report findings only; in `refine` mode, provide the proposed requirement and model-link updates as a change set.
 
 Do not invent clinical claims, safety limits, risk acceptability, standards compliance, or regulatory classifications. Mark missing information as `TBD` and formulate a focused question.
 
@@ -60,7 +78,7 @@ For user-facing behavior, capture intended users, use environment, critical task
 
 Read [Medical-device guardrails](references/medical-device-guardrails.md) when the request concerns regulatory framing, risk controls, usability, cybersecurity, or a requirements baseline.
 
-## Review and improve an existing set
+## Review and refine an existing set
 
 Review in this order:
 
@@ -69,18 +87,19 @@ Review in this order:
 3. Apply SOPHIST checks: atomic, necessary, unambiguous, feasible, consistent, complete, traceable, and verifiable.
 4. Check parameters, units, tolerances, timing anchors, error behavior, interfaces, and defined terms.
 5. Check parent/child traceability, risk-control linkage, and an objective verification or validation approach.
-6. Return a review table with ID, finding, severity, proposed wording, reason, and unresolved assumption.
+6. Return a review table with ID, finding, severity, proposed wording, reason, model link when applicable, and unresolved assumption.
 
-Never silently change the intended meaning of an approved requirement. Present meaning-changing edits as alternatives and identify the decision needed.
+In `review` mode, stop at the findings table. In `refine` mode, follow it with a revised requirements table and a change log containing the ID, old wording, proposed wording, change type, rationale, traceability impact, and required approval. Never silently change the intended meaning of an approved requirement.
 
 ## Deliverables
 
-Unless the user specifies another format, return:
+Unless the user specifies another format, return the parts applicable to the selected mode:
 
 1. Assumptions and open questions.
-2. A requirements table with ID, level, EARS requirement, rationale, source, links, and verification or validation.
-3. A traceability summary showing user need → system → software/hardware allocation → verification or validation evidence.
-4. A concise review of gaps, conflicts, and compliance-sensitive items requiring quality or regulatory approval.
+2. For `create` or `refine`, a requirements table with ID, level, EARS requirement, rationale, source, links, and verification or validation.
+3. For `review` or `refine`, a findings table; for `refine`, include the change log.
+4. A traceability summary showing user need → system → software/hardware allocation → verification or validation evidence, including model links when supplied.
+5. A concise review of gaps, conflicts, and compliance-sensitive items requiring quality or regulatory approval.
 
 ## Portability
 

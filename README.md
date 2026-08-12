@@ -10,7 +10,7 @@ self-contained and independently installable.
 
 | Skill | Purpose |
 | --- | --- |
-| [`medical-device-requirements`](skills/medical-device-requirements/) | Draft and review user needs plus system, software, and hardware requirements using EARS and SOPHIST. |
+| [`medical-device-requirements`](skills/medical-device-requirements/) | Create, review, and refine user needs plus system, software, and hardware requirements using EARS and SOPHIST; accepts SysML v2 and MEMO model context. |
 
 ## Installation
 
