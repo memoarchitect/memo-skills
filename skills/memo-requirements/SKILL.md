@@ -5,13 +5,13 @@ description: Create, review, refine, or trace medical-device user needs and syst
 
 # Medical Device Requirements
 
-Create clear, testable requirements. Apply EARS as the requirement-sentence syntax and SOPHIST as the quality method by default; do not require the user to request either method. Treat this skill as a writing and review aid, not a regulatory-compliance determination. Ask for the applicable markets, device classification, quality-system procedures, risk-management file, and controlled terminology when they affect the requested output.
+Create clear, testable requirements. Apply EARS as the requirement-sentence syntax and SOPHIST as the quality method by default; do not require the user to request either method. Treat this skill as a writing and review aid, not a regulatory-compliance determination. Inspect the supplied artifact, referenced model, and working context before asking for information. Ask only a blocking question; otherwise state the assumption or mark the gap `TBD` in the result.
 
 Use EARS to state each technical requirement in a clear conditional or unconditional `shall` sentence. Use SOPHIST to test that wording for necessity, atomicity, lack of ambiguity, completeness, consistency, feasibility, traceability, and verifiability. A user need may remain a concise outcome statement when forcing it into a technical EARS sentence would lose the user intent; apply SOPHIST quality checks and define its validation criteria.
 
 ## Select the operating mode
 
-Infer the mode from the request, or ask only if the distinction changes the requested artifact:
+Use the first explicit mode word: `create`, `review`, or `refine`. The user may provide only that word and a need, requirement set, or accessible reference. If no mode is stated, infer `create` from a new need or desired outcome; infer `review` from an existing baseline as the non-changing default; infer `refine` only from an explicit request to change, improve, fix, or rewrite the baseline. Ask only if no safe inference is possible.
 
 | Mode | Purpose | Output and change rule |
 | --- | --- | --- |
@@ -21,9 +21,21 @@ Infer the mode from the request, or ask only if the distinction changes the requ
 
 For approved or baselined content, `refine` produces a proposed revision, never a silent replacement. Identify every meaning-changing edit and the approval decision it needs.
 
-## Start with the requirement context
+### Minimum input
 
-Before drafting, obtain or state assumptions for:
+Accept these minimal requests:
+
+```text
+Create: <need, outcome, or source reference>
+Review: <requirement baseline or reference>
+Refine: <requirement baseline or reference>
+```
+
+Resolve named files, models, and requirements from the available working context before requesting them again. Do not ask the user to restate EARS, SOPHIST, requirement level, traceability, verification, or known project context. Derive what is available; list non-blocking unknowns as `TBD` and continue.
+
+## Build the requirement context
+
+Extract or state assumptions for:
 
 - Intended use, indication, patient population, intended users, and use environment.
 - Product boundary and the requirement level: user need, system, software, or hardware.
@@ -36,7 +48,7 @@ When the user references a SysML v2 model that is available in the working conte
 
 Use the mapping and evidence rules in [SysML v2 traceability](references/sysml-v2-traceability.md). State the model-evidence level in every result. Do not infer intended use, clinical claims, hazards, risk controls, acceptance limits, regulatory obligations, or an unsupported relation mapping merely from model structure. Flag model/text conflicts, missing allocations, broken trace links, and undefined terms. In `create` mode, produce requirements proposed from the model plus the stated external inputs; in `review` mode, report findings only; in `refine` mode, provide the proposed requirement and model-link updates as a change set.
 
-Do not invent clinical claims, safety limits, risk acceptability, standards compliance, or regulatory classifications. Mark missing information as `TBD` and formulate a focused question.
+Do not invent clinical claims, safety limits, risk acceptability, standards compliance, or regulatory classifications. Mark missing information as `TBD`; ask a focused question only when the gap blocks useful work.
 
 ## Preserve the requirement hierarchy
 

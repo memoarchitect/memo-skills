@@ -38,35 +38,19 @@ EARS and SOPHIST are built into `memo-requirements`; do not repeat them in each
 request. The skill writes technical requirements in EARS form and uses SOPHIST
 to check their quality before returning them.
 
-Use the same task examples with every assistant. If the assistant offers a
-skill picker, type `/` (or use its equivalent), select `memo-requirements`, and
-write only the task and its inputs:
+Use the smallest useful prompt. If the assistant offers a skill picker, type
+`/` (or use its equivalent), select `memo-requirements`, and write one of:
 
 ```text
-Create system requirements from these user needs for a home-use infusion pump:
-
-- A patient must be able to start a prescribed infusion safely.
-- A patient must be warned if an infusion is interrupted.
-- The device must prevent delivery above the prescribed dose.
+Create: <need, outcome, or source reference>
+Review: <requirement baseline or reference>
+Refine: <requirement baseline or reference>
 ```
 
-To review a baseline:
-
-```text
-Review these software requirements. Return findings and suggested wording only;
-do not alter the source.
-
-[paste requirements]
-```
-
-To refine a baseline:
-
-```text
-Refine this requirements baseline. Review it first, then provide proposed
-revisions and a change log.
-
-[paste requirements]
-```
+The skill inspects accessible requirements, SysML v2 models, and project context
+first. It applies EARS and SOPHIST automatically, preserves baseline IDs, uses
+`TBD` for non-blocking gaps, and asks only for information that prevents useful
+work.
 
 To use a SysML v2 or MEMO model as context:
 
@@ -82,10 +66,9 @@ paste the model only when the assistant cannot otherwise access it.
 
 In an assistant without a skill picker, invoke the installed skill by name where
 supported and use the same prompt with the prefix `Use memo-requirements to`.
-For example: `Use memo-requirements to create system requirements from these
-user needs for a home-use infusion pump: ...`. If named invocation is not
-available, attach the complete skill folder or provide its contents before using
-the same task prompt.
+For example: `Use memo-requirements to refine: <requirements reference>`. If
+named invocation is not available, attach the complete skill folder or provide
+its contents before using the same minimal prompt.
 
 Read the skill's `SKILL.md` before use. It states the required inputs, operating
 modes, output format, and safety limits for that skill.
