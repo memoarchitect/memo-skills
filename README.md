@@ -71,14 +71,14 @@ revisions and a change log.
 To use a SysML v2 or MEMO model as context:
 
 ```text
-Refine requirement traceability and allocation using this SysML v2 or MEMO
-model as context: <model name or path>. Flag missing information rather than
-inventing requirements.
+Refine requirement traceability and allocation using the SysML v2 model at
+<model name or path> as context. Flag missing information rather than inventing
+requirements.
 ```
 
-Reference a model already available to the assistant by its name, path, or other
-platform-specific identifier. Attach or paste it only when the assistant cannot
-otherwise access it.
+Reference an available SysML v2 model by its name, path, or other
+platform-specific identifier. A MEMO model is SysML v2 model context. Attach or
+paste the model only when the assistant cannot otherwise access it.
 
 In an assistant without a skill picker, invoke the installed skill by name where
 supported and use the same prompt with the prefix `Use memo-requirements to`.
