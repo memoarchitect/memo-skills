@@ -32,7 +32,7 @@ Before drafting, obtain or state assumptions for:
 
 ### Use SysML v2 or MEMO model input
 
-When given a SysML v2 or MEMO model, use it as evidence for terminology, element identity, hierarchy, allocation, interfaces, states, constraints, existing requirement relations, and traceability. Cite the relevant model element or qualified name in the source or trace link.
+When the user references a SysML v2 or MEMO model that is available in the working context, inspect it and use it as evidence for terminology, element identity, hierarchy, allocation, interfaces, states, constraints, existing requirement relations, and traceability. Cite the relevant model element or qualified name in the source or trace link. Ask the user to attach, paste, or otherwise make the model accessible only when it cannot be reached from the supplied reference.
 
 Do not infer intended use, clinical claims, hazards, risk controls, acceptance limits, or regulatory obligations merely from model structure. Flag model/text conflicts, missing allocations, broken trace links, and undefined terms. In `create` mode, produce requirements proposed from the model plus the stated external inputs; in `review` mode, report findings only; in `refine` mode, provide the proposed requirement and model-link updates as a change set.
 
