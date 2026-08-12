@@ -10,7 +10,7 @@ self-contained and independently installable.
 
 | Skill | Purpose |
 | --- | --- |
-| [`medical-device-requirements`](skills/medical-device-requirements/) | Create, review, and refine user needs plus system, software, and hardware requirements using EARS and SOPHIST; accepts SysML v2 and MEMO model context. |
+| [`memo-requirements`](skills/memo-requirements/) | Create, review, and refine user needs plus system, software, and hardware requirements using EARS and SOPHIST; accepts SysML v2 and MEMO model context. |
 
 ## Using a skill
 
@@ -18,7 +18,7 @@ Each skill is a folder whose entry point is always named `SKILL.md`:
 
 ```text
 skills/
-  medical-device-requirements/
+  memo-requirements/
     SKILL.md
     references/
 ```
@@ -29,20 +29,29 @@ metadata or tool dependency is required. If a platform uses another skill
 format, provide `SKILL.md` as the governing instruction file and preserve its
 relative `references/` directory.
 
-Invoke the installed skill by name where the platform supports skill invocation,
-or describe the requested task and attach the skill contents. For example:
+For Codex, install a copy or symlink at `~/.codex/skills/memo-requirements/`,
+then start a new task or refresh the skill list. Adding this repository as a
+project submodule keeps the source available; it does not itself install the
+skill into Codex.
+
+In Codex desktop, type `/` in the prompt, search for and select
+`memo-requirements`, then write the request. If it is not listed, confirm that
+the complete folder is installed at the location above and start a new task.
+
+On platforms without a slash menu, invoke the installed skill by name where
+supported, or describe the task and attach the skill contents. For example:
 
 ```text
-Use medical-device-requirements to create system requirements for a home-use
+Use memo-requirements to create system requirements for a home-use
 device from these user needs and risk controls.
 
-Use medical-device-requirements to review these software requirements. Return
+Use memo-requirements to review these software requirements. Return
 findings and suggestions only; do not alter the source.
 
-Use medical-device-requirements to refine this requirements baseline. Review it
+Use memo-requirements to refine this requirements baseline. Review it
 first, then provide proposed revisions and a change log.
 
-Use medical-device-requirements with this SysML v2 or MEMO model as context to
+Use memo-requirements with this SysML v2 or MEMO model as context to
 refine requirement traceability and allocation. Flag missing information rather
 than inventing requirements.
 ```

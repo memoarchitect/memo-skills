@@ -1,5 +1,5 @@
 ---
-name: medical-device-requirements
+name: memo-requirements
 description: Create, review, refine, or trace medical-device user needs and system, software, and hardware requirements. Use for device requirements specifications, design inputs, acceptance criteria, requirements reviews, and traceability work that should apply EARS syntax and SOPHIST quality rules while accounting for intended use, users, use environments, risk controls, verification, and validation. Accept SysML v2 or MEMO models as input context for further refinement.
 ---
 
@@ -103,4 +103,4 @@ Unless the user specifies another format, return the parts applicable to the sel
 
 ## Portability
 
-This is intentionally a plain `SKILL.md` skill with relative Markdown references and no tool dependency. Copy the `medical-device-requirements/` folder into the target assistant's skills directory, or provide `SKILL.md` as the governing instruction file where the target platform uses another skill format.
+This is intentionally a plain `SKILL.md` skill with relative Markdown references and no tool dependency. Copy the `memo-requirements/` folder into the target assistant's skills directory, or provide `SKILL.md` as the governing instruction file where the target platform uses another skill format.
