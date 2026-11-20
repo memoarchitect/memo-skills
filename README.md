@@ -11,6 +11,9 @@ self-contained and independently installable.
 | Skill | Purpose |
 | --- | --- |
 | [`memo-requirements`](skills/memo-requirements/) | Create, review, and refine user needs plus system, software, and hardware requirements using EARS and SOPHIST; accepts SysML v2 and MEMO model context. |
+| [`memo-model-intake`](skills/memo-model-intake/) | Turn a codebase, documents, spreadsheets or another model into a reviewed plan for a MEMO model: new, update, unchanged or investigate, settled one structural question at a time. |
+| [`memo-method-step`](skills/memo-method-step/) | Work one step of the model's method from its own objective, criteria, kinds and rules; make or propose the changes and check them. |
+| [`memo-flow-walkthrough`](skills/memo-flow-walkthrough/) | Build or review a clinical, operational or functional flow one confirmed section at a time. |
 
 ## Using a skill
 
